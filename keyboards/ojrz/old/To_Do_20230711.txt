@@ -1,0 +1,4 @@
+To Do
+
+●via.jsonファイルの修正。
+●vial対応
