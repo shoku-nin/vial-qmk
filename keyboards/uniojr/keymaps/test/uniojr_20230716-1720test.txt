@@ -1,0 +1,35 @@
+uniojr
+
+【20230716-1720】
+
+rteow   pSiyu
+fgdls   8Tkhj
+vbc,x   .A-nm
+  zaq   1T3
+
+  { t r e y u i  KC_NO,KC_NO,KC_NO,KC_NO }, \
+  { g f d h j k  KC_NO,KC_NO,KC_NO,KC_NO }, \
+  { b v c n m -  KC_NO,KC_NO,KC_NO,KC_NO }, \
+  { CL1, CL2, RE,  CR1, KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO }, \
+  { KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,    w s x KC_NO }, \
+  { KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,    o l , KC_NO }, \
+  { KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,    q a z KC_NO }, \
+  { KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,    p 8 . KC_NO }, \
+  { KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,    S T A KC_NO }, \
+  { KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,    1 T 3 KC_NO } \
+
+  { L12 L11 L13 R14 R15 R13  KC_NO,KC_NO,KC_NO,KC_NO }, \
+  { L22 L21 L23 R24 R25 R23  KC_NO,KC_NO,KC_NO,KC_NO }, \
+  { L32 L31 L33 R34 R35 R33  KC_NO,KC_NO,KC_NO,KC_NO }, \
+  { CL1, CL2, RE,  CR1, KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO }, \
+  { KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,    L15 L25 L35 KC_NO }, \
+  { KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,    L14 L24 L34 KC_NO }, \
+  { KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,    L45 L44 L43 KC_NO }, \
+  { KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,    R11 R21 R31 KC_NO }, \
+  { KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,    R12 R22 R32 KC_NO }, \
+  { KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,    R41 R42 R43 KC_NO } \
+
+qwert	yuiop
+asdfg	hjkl8
+zxcvb	nm-,.
+  ATS	567
