@@ -1,0 +1,6 @@
+To Do
+
+●LayerBlink(QMK0.21標準装備)の検討
+●via.jsonファイルの修正。
+●vial対応
+●Layer4 = RGB config, Layer5 = Mouse emulator

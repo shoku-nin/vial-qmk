@@ -1,0 +1,53 @@
+// Copyright 2023 shoku_nin (@shoku_nin)
+// SPDX-License-Identifier: GPL-2.0-or-later
+
+#pragma once
+
+#ifdef POINTING_DEVICE_ENABLE
+#   define ANALOG_JOYSTICK_X_AXIS_PIN GP29
+#   define ANALOG_JOYSTICK_Y_AXIS_PIN GP28
+#   define ANALOG_JOYSTICK_SPEED_REGULATOR 10 // (lower makes it faster)
+//#   define POINTING_DEVICE_INVERT_X
+//#   define POINTING_DEVICE_ROTATION_180
+#   define POINTING_DEVICE_AUTO_MOUSE_ENABLE
+#   define AUTO_MOUSE_TIME 1000
+#endif
+
+/*
+#ifdef MOUSEKEY_ENABLE
+#   define MOUSEKEY_MOVE_DELTA  1
+#   define MOUSEKEY_MAX_SPEED   2
+#   define MOUSEKEY_TIME_TO_MAX 0
+#endif
+*/
+
+//#define MATRIX_HAS_GHOST
+#define MATRIX_MASKED
+//#define BOOTMAGIC_LITE_ROW 0
+//#define BOOTMAGIC_LITE_COLUMN 1
+
+/* Rotary encoder */
+#ifdef ENCODER_ENABLE
+#   define ENCODERS_PAD_A { GP8 }
+#   define ENCODERS_PAD_B { GP9 }
+#   define ENCODER_RESOLUTION 4
+#endif
+
+#ifdef RGBLIGHT_ENABLE
+    #define WS2812_DI_PIN GP0
+    #define RGBLED_NUM 38
+
+    #define RGBLIGHT_LAYERS
+    #define RGBLIGHT_LAYER_BLINK
+//
+    #define RGBLIGHT_EFFECT_BREATHING
+    #define RGBLIGHT_EFFECT_RAINBOW_MOOD
+    #define RGBLIGHT_EFFECT_RAINBOW_SWIRL
+    #define RGBLIGHT_EFFECT_SNAKE
+    #define RGBLIGHT_EFFECT_KNIGHT
+    #define RGBLIGHT_EFFECT_CHRISTMAS
+    #define RGBLIGHT_EFFECT_STATIC_GRADIENT
+    #define RGBLIGHT_EFFECT_RGB_TEST
+    #define RGBLIGHT_EFFECT_ALTERNATING
+    #define RGBLIGHT_EFFECT_TWINKLE
+#endif

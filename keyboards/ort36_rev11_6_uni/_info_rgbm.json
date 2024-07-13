@@ -1,0 +1,84 @@
+{
+"manufacturer": "shoku_nin",
+"keyboard_name": "ort36_rev11_uni",
+"maintainer": "shoku_nin",
+"bootloader": "rp2040",
+"diode_direction": "COL2ROW",
+"features": {
+    "bootmagic": false,
+    "command": false,
+    "console": false,
+    "extrakey": true,
+    "mousekey": true,
+    "nkro": true,
+    "rgb_matrix": true
+},
+"matrix_pins": {
+"rows": [
+    "GP10","GP14","GP9" ,"GP29","GP28","GP15",
+    "GP5", "GP4", "GP6", "GP1", "GP2", "GP3",
+    "GP8", "GP7"
+],
+"cols": [
+    "GP29","GP28","GP15","GP10","GP14","GP9",
+    "GP1", "GP2", "GP3", "GP5", "GP4", "GP6",
+    "GP7","GP8"
+]
+},
+"rgb_matrix": {
+    "max_brightness": 200,
+    "hue_steps": 5,
+    "saturation_steps": 5,
+    "brightness_steps": 5,
+},
+"processor": "RP2040",
+"usb": {
+    "device_version": "1.0.0",
+    "pid": "0x4820",
+    "vid": "0x7724"
+},
+"layouts": {
+    "LAYOUT_split_3x5_3": {
+    "layout": [
+{"matrix": [4, 3], "x": 0, "y": 0},
+    {"matrix": [3, 3],  "x": 1, "y": 0},
+    {"matrix": [0, 2],  "x": 2, "y": 0},
+    {"matrix": [0, 1],  "x": 3, "y": 0},
+    {"matrix": [0, 0],  "x": 4, "y": 0},
+    {"matrix": [6, 6],  "x": 7, "y": 0},
+    {"matrix": [6, 7],  "x": 8, "y": 0},
+    {"matrix": [6, 8],  "x": 9, "y": 0},
+    {"matrix": [9, 9],  "x":10, "y": 0},
+    {"matrix": [10,9],  "x":11, "y": 0},
+{"matrix": [4, 4], "x": 0, "y": 1},
+    {"matrix": [3, 4],  "x": 1, "y": 1},
+    {"matrix": [1, 2],  "x": 2, "y": 1},
+    {"matrix": [1, 1],  "x": 3, "y": 1},
+    {"matrix": [1, 0],  "x": 4, "y": 1},
+    {"matrix": [7, 6],  "x": 7, "y": 1},
+    {"matrix": [7, 7],  "x": 8, "y": 1},
+    {"matrix": [7, 8],  "x": 9, "y": 1},
+    {"matrix": [9, 10], "x":10, "y": 1},
+    {"matrix": [10,10], "x":11, "y": 1},
+{"matrix": [4, 5], "x": 0, "y": 2},
+    {"matrix": [3, 5],  "x": 1, "y": 2},
+    {"matrix": [2, 2],  "x": 2, "y": 2},
+    {"matrix": [2, 1],  "x": 3, "y": 2},
+    {"matrix": [2, 0],  "x": 4, "y": 2},
+    {"matrix": [8, 6],  "x": 7, "y": 2},
+    {"matrix": [8, 7],  "x": 8, "y": 2},
+    {"matrix": [8, 8],  "x": 9, "y": 2},
+    {"matrix": [9, 11], "x":10, "y": 2},
+    {"matrix": [10,11], "x":11, "y": 2},
+{"matrix": [5, 5], "x": 2.5, "y": 3},
+    {"matrix": [5, 4],  "x": 3.5, "y": 3},
+    {"matrix": [5, 3],  "x": 4.5, "y": 3},
+    {"matrix": [11,9],  "x": 6.5, "y": 3},
+    {"matrix": [11,10], "x": 7.5, "y": 3},
+    {"matrix": [11,11], "x": 8.5, "y": 3},
+{"matrix": [12,12], "x": 5.5, "y": 0.25},
+{"matrix": [13,13], "x": 5.5, "y": 3.75}
+    ]
+    }
+}
+}
