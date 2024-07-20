@@ -5,7 +5,7 @@ MCU = RP2040
 BOOTLOADER = rp2040
 
 SPLIT_KEYBOARD = no
-COMBO_ENABLE = yes
+ENCODER_ENABLE = yes
 
 # Ignore some warnings during the build, likely to be fixed before RP2040 PR is merged
 ALLOW_WARNINGS = no

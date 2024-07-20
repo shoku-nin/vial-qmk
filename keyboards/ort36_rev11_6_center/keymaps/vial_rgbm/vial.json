@@ -1,0 +1,18 @@
+{
+    "keyboard_name": "ort36_rev11_6_center",
+    "productId": "0x4830",
+    "vendorId": "0x7724",
+    "lighting": "vialrgb",
+    "matrix": {
+        "rows": 5,
+        "cols": 5
+    },
+    "layouts": {
+        "labels": [],
+            "keymap": [
+[{"x":3.5},"0,0"],
+[{"y":0.25,"x":3.5},"2,3"],
+[{"y":-0.5},"1,0","1,1","1,2",{"x":2},"4,4","4,3","4,2"]
+]
+    }
+}

@@ -5,7 +5,6 @@ MCU = RP2040
 BOOTLOADER = rp2040
 
 SPLIT_KEYBOARD = no
-COMBO_ENABLE = yes
 
 # Ignore some warnings during the build, likely to be fixed before RP2040 PR is merged
 ALLOW_WARNINGS = no
@@ -25,9 +24,11 @@ MAGIC_ENABLE = no
 CAPS_WORD_ENABLE = yes
 
 #PER KEY RGB
-BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
-RGBLIGHT_ENABLE = yes       # Enable keyboard RGB underglow
-RGBLIGHT_DRIVER = ws2812    # RGB matrix driver support
+RGBLIGHT_ENABLE = no       # Enable keyboard RGB underglow
+RGB_MATRIX_ENABLE = yes       # Enable keyboard RGB underglow
+RGB_MATRIX_DRIVER = ws2812  # RGB matrix driver support
 
-POINTING_DEVICE_ENABLE = yes # Generic Pointer
-POINTING_DEVICE_DRIVER = analog_joystick
+RGB_MATRIX_SUPPORTED = yes
+
+#POINTING_DEVICE_ENABLE = yes # Generic Pointer
+#POINTING_DEVICE_DRIVER = analog_joystick

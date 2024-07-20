@@ -4,11 +4,11 @@
 "matrix_pins": {
 "rows": [
     "GP5", "GP4", "GP6",
-    "GP1", "GP2", "GP3", "GP27","GP26","GP15",
+    "GP27","GP26","GP15","GP1", "GP2", "GP3",
     "GP13","GP7", "GP10","GP12","GP8"
 ],
 "cols": [
-    "GP1", "GP2", "GP3", "GP27","GP26","GP15",
+    "GP27","GP26","GP15","GP1", "GP2", "GP3",
     "GP5", "GP4", "GP6",
     "GP12","GP8",        "GP13","GP7", "GP10"
 ]
@@ -55,13 +55,13 @@ const matrix_row_t matrix_mask[MATRIX_ROWS] = {
 8  { = = = = = = D T E = = = = = },
 
      0 1 2 3 4 5 6 7 8 9 0 1 2 3
-9  { = = = = = = = = = 1 = = = = },
-10 { = = = = = = = = = 4 5 6 = = },
+9  { = = = = = = = = = 1 7 = = = },
+10 { = = = = = = = = = = 8 = = = },
 
      0 1 2 3 4 5 6 7 8 9 0 1 2 3
-11 { = = = = = = = = = = = = 2 7 },
-12 { = = = = = = = = = = = = = 8 },
-13 { = = = = = = = = = = = = = 9 }
+11 { = = = = = = = = = = 9 = = = },
+12 { = = = = = = = = = = = 2 = = },
+13 { = = = = = = = = = = = 6 5 4 }
 
 // Per Key Backlight
 // 20 19 18 17 16     0     35 36 37 38 39
@@ -100,9 +100,9 @@ led_config_t g_led_config = { {
     NO_LED, NO_LED, NO_LED, NO_LED, NO_LED },
 
 { NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED,
-    NO_LED, NO_LED, NO_LED, 1,      NO_LED },
-{ NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED,
     NO_LED, NO_LED, NO_LED, NO_LED, NO_LED },
+{ NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED,
+    NO_LED, NO_LED,  1,     NO_LED, NO_LED },
 { NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED,
     NO_LED, NO_LED, NO_LED, NO_LED, NO_LED }
 }, {

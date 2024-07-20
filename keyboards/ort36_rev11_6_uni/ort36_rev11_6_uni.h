@@ -6,11 +6,11 @@
 "matrix_pins": {
 "rows": [
     "GP5", "GP4", "GP6",
-    "GP1", "GP2", "GP3", "GP27","GP26","GP15",
+    "GP27","GP26","GP15","GP1", "GP2", "GP3",
     "GP13","GP7", "GP10","GP12","GP8"
 ],
 "cols": [
-    "GP1", "GP2", "GP3", "GP27","GP26","GP15",
+    "GP27","GP26","GP15","GP1", "GP2", "GP3",
     "GP5", "GP4", "GP6",
     "GP12","GP8",        "GP13","GP7", "GP10"
 ]
@@ -49,13 +49,13 @@
  \
  \
   { KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,   KC_NO, KC_NO, KC_NO, \
-    C1,    KC_NO, KC_NO, KC_NO, KC_NO }, \
+    C1,    TR1, KC_NO, KC_NO, KC_NO }, \
   { KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,   KC_NO, KC_NO, KC_NO, \
-    TL1,   TL2,   TL3,   KC_NO, KC_NO }, \
+    KC_NO, TR2,   KC_NO, KC_NO, KC_NO }, \
   { KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,   KC_NO, KC_NO, KC_NO, \
-    KC_NO, KC_NO, KC_NO, C2,    TR1 }, \
+    KC_NO, TR3,   KC_NO, KC_NO, KC_NO }, \
   { KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,   KC_NO, KC_NO, KC_NO, \
-    KC_NO, KC_NO, KC_NO, KC_NO, TR2 }, \
+    KC_NO, KC_NO, C2,    KC_NO, KC_NO }, \
   { KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,   KC_NO, KC_NO, KC_NO, \
-    KC_NO, KC_NO, KC_NO, KC_NO, TR3 } \
+    KC_NO, KC_NO, TL3,   TL2,   TL1 } \
 }
