@@ -9,10 +9,12 @@
 
 #ifdef RGBLIGHT_ENABLE
     #undef  WS2812_DI_PIN
-    #undef  RGBLED_NUM
+//    #undef  RGBLED_NUM
+    #undef  RGBLIGHT_LED_COUNT
     #undef  RGBLED_SPLIT
 //
     #define WS2812_DI_PIN GP16
-    #define RGBLED_NUM 2
+//    #define RGBLED_NUM 2
+    #define RGBLIGHT_LED_COUNT 2
     #define RGBLED_SPLIT {1,1}
 #endif

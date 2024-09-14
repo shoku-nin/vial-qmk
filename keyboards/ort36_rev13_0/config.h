@@ -6,6 +6,8 @@
 #define SOFT_SERIAL_PIN GP1
 //#define FORCED_SYNC_THROTTLE_MS 100
 #define MASTER_RIGHT
+//#define MASTER_LEFT
+
 //#define SPLIT_HAND_PIN GP15
 //SPLIT_HAND_PIN:
 // If pin is high, it's the left side,
@@ -24,11 +26,26 @@
 #endif
 */
 
+#ifdef POINTING_DEVICE_ENABLE
+#   define ANALOG_JOYSTICK_X_AXIS_PIN GP27
+#   define ANALOG_JOYSTICK_Y_AXIS_PIN GP26
+#   define ANALOG_JOYSTICK_SPEED_REGULATOR 30 // (lower makes it faster)
+//#   define POINTING_DEVICE_INVERT_X_LEFT
+//#   define POINTING_DEVICE_ROTATION_180_LEFT
+//#   define POINTING_DEVICE_INVERT_Y_LEFT
+//#   define POINTING_DEVICE_INVERT_X_RIGHT
+//#   define SPLIT_POINTING_ENABLE
+//#   define POINTING_DEVICE_LEFT
+//#   define POINTING_DEVICE_RIGHT
+//#   define POINTING_DEVICE_COMBINED
+#   define POINTING_DEVICE_AUTO_MOUSE_ENABLE
+#   define AUTO_MOUSE_TIME 1000
+#endif
+
 #ifdef RGBLIGHT_ENABLE
-    #define WS2812_DI_PIN GP11
-//    #define RGBLED_NUM 38
-    #define RGBLIGHT_LED_COUNT 38
-    #define RGBLED_SPLIT {19,19}
+    #define WS2812_DI_PIN GP6
+    #define RGBLIGHT_LED_COUNT 24
+    #define RGBLED_SPLIT {12,12}
 
 #    define RGBLIGHT_LAYERS
 #    define RGBLIGHT_LAYER_BLINK
@@ -44,19 +61,15 @@
 #    define RGBLIGHT_EFFECT_RGB_TEST
 #    define RGBLIGHT_EFFECT_ALTERNATING
 #    define RGBLIGHT_EFFECT_TWINKLE
-//#    define RGBLIGHT_LIMIT_VAL 200
-//#    define RGBLIGHT_HUE_STEP 5
-//#    define RGBLIGHT_SAT_STEP 5
-//#    define RGBLIGHT_VAL_STEP 5
     #define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_BREATHING+3
 #endif
 
 #ifdef RGB_MATRIX_ENABLE
-#    define WS2812_DI_PIN GP13
-#    define RGBLED_NUM 38
-#    define RGB_MATRIX_SPLIT { 19, 19 }
-#    define SPLIT_TRANSPORT_MIRROR
-#    define SPLIT_LAYER_STATE_ENABLE
+    #define WS2812_DI_PIN GP6
+    #define RGBLIGHT_LED_COUNT 24
+    #define RGB_MATRIX_SPLIT {12,12}
+    #define SPLIT_TRANSPORT_MIRROR
+    #define SPLIT_LAYER_STATE_ENABLE
 //
 #    define RGB_MATRIX_KEYPRESSES // reacts to keypresses
 //#    define RGB_MATRIX_KEYRELEASES // reacts to keyreleases

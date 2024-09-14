@@ -1,7 +1,10 @@
-// Copyright 2023 shoku_nin (@shoku_nin)
+// Copyright 2024 shoku_nin (@shoku_nin)
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
+
+//#define PERMISSIVE_HOLD
+//#define IGNORE_MOD_TAP_INTERRUPT
 
 #define SOFT_SERIAL_PIN GP1
 //#define FORCED_SYNC_THROTTLE_MS 100
@@ -16,19 +19,35 @@
 
 //#define SPLIT_WATCHDOG_ENABLE
 //#define SPLIT_WATCHDOG_TIMEOUT 5000
+
 /*
 #ifdef MOUSEKEY_ENABLE
 #   define MOUSEKEY_MOVE_DELTA  1
-#   define MOUSEKEY_MAX_SPEED   1
+#   define MOUSEKEY_MAX_SPEED   8
 #   define MOUSEKEY_TIME_TO_MAX 0
 #endif
 */
 
+#ifdef POINTING_DEVICE_ENABLE
+#   define ANALOG_JOYSTICK_X_AXIS_PIN GP29
+#   define ANALOG_JOYSTICK_Y_AXIS_PIN GP28
+#   define ANALOG_JOYSTICK_SPEED_REGULATOR 30 // (lower makes it faster)
+//#   define POINTING_DEVICE_INVERT_X_LEFT
+//#   define POINTING_DEVICE_ROTATION_180_LEFT
+//#   define POINTING_DEVICE_INVERT_Y_LEFT
+//#   define POINTING_DEVICE_INVERT_X_RIGHT
+#   define SPLIT_POINTING_ENABLE
+//#   define POINTING_DEVICE_LEFT
+#   define POINTING_DEVICE_RIGHT
+//#   define POINTING_DEVICE_COMBINED
+#   define POINTING_DEVICE_AUTO_MOUSE_ENABLE
+#   define AUTO_MOUSE_TIME 1000
+#endif
+
 #ifdef RGBLIGHT_ENABLE
-    #define WS2812_DI_PIN GP11
-//    #define RGBLED_NUM 38
-    #define RGBLIGHT_LED_COUNT 38
-    #define RGBLED_SPLIT {19,19}
+    #define WS2812_DI_PIN GP6
+    #define RGBLIGHT_LED_COUNT 24
+    #define RGBLED_SPLIT {12,12}
 
 #    define RGBLIGHT_LAYERS
 #    define RGBLIGHT_LAYER_BLINK
@@ -48,15 +67,16 @@
 //#    define RGBLIGHT_HUE_STEP 5
 //#    define RGBLIGHT_SAT_STEP 5
 //#    define RGBLIGHT_VAL_STEP 5
+    #define RGBLIGHT_DEFAULT_HUE 200
+    #define RGBLIGHT_DEFAULT_SAT 255
+    #define RGBLIGHT_DEFAULT_VAL 110
     #define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_BREATHING+3
+//#    define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_RAINBOW_SWIRL+5
 #endif
-
 #ifdef RGB_MATRIX_ENABLE
-#    define WS2812_DI_PIN GP13
-#    define RGBLED_NUM 38
-#    define RGB_MATRIX_SPLIT { 19, 19 }
-#    define SPLIT_TRANSPORT_MIRROR
-#    define SPLIT_LAYER_STATE_ENABLE
+#    define WS2812_DI_PIN GP6
+#    define RGB_MATRIX_LED_COUNT 24
+#    define RGBLED_SPLIT {12,12}
 //
 #    define RGB_MATRIX_KEYPRESSES // reacts to keypresses
 //#    define RGB_MATRIX_KEYRELEASES // reacts to keyreleases
@@ -65,10 +85,10 @@
 #    define RGB_DISABLE_WHEN_USB_SUSPENDED
  // turn off effects when suspended
 //
-#    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 200
-#    define RGB_MATRIX_STARTUP_HUE 0
-#    define RGB_MATRIX_STARTUP_SAT 255
-#    define RGB_MATRIX_STARTUP_VAL 50
+#    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 150
+    #define RGBLIGHT_DEFAULT_HUE 200
+    #define RGBLIGHT_DEFAULT_SAT 255
+    #define RGBLIGHT_DEFAULT_VAL 110
 #    define RGB_MATRIX_STARTUP_SPD 127
 //
 //#    define RGB_MATRIX_HUE_STEP 4
@@ -130,5 +150,5 @@
 #    define ENABLE_RGB_MATRIX_SOLID_REACTIVE_SIMPLE
 #    define ENABLE_RGB_MATRIX_SPLASH
 //
-#    define RGB_MATRIX_STARTUP_MODE RGB_MATRIX_CYCLE_ALL
+#    define RGB_MATRIX_STARTUP_MODE RGB_MATRIX_CYCLE_PINWHEEL
 #endif
