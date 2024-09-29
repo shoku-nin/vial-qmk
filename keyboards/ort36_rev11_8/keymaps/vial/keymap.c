@@ -10,62 +10,77 @@ void pointing_device_init_user(void) {
     set_auto_mouse_enable(true);
 }
 
+#endif
+
 enum custom_keycodes {
     SPD_LO = SAFE_RANGE,
     SPD_MID,
     SPD_HI
 };
-#endif
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [0] = LAYOUT_wrapper(
+TO(6),TO(1),    TO(6),TO(1),
+KC_MS_WH_DOWN,KC_MS_BTN3,KC_MS_WH_UP,
+KC_MS_WH_DOWN,KC_MS_BTN3,KC_MS_WH_UP,
 _qwert_L1_, _qwert_R1_,
 _qwert_L2_, _qwert_R2_,
 _qwert_L3_, _qwert_R3_,
-_qwert_L4_, _qwert_R4_,
-KC_MS_WH_DOWN,KC_MS_BTN3,KC_MS_WH_UP,
-KC_MS_WH_DOWN,KC_MS_BTN3,KC_MS_WH_UP
+_qwert_L4_, _qwert_R4_
 ),
 
 [1] = LAYOUT_wrapper(
+_______,TO(0),    _______,TO(0),
+_______,_______,_______,    _______,_______,_______,
 _num_L1_, _num_R1_,
 _num_L2_, _num_R2_,
 _num_L3_, _num_R3_,
-_num_L4_, _num_R4_,
-_______,_______,_______,    _______,_______,_______
+_num_L4_, _num_R4_
 ),
 
 [2] = LAYOUT_wrapper(
-_ms_L1_, _ms_R1_,
-_ms_L2_, _ms_R2_,
-_ms_L3_, _ms_R3_,
-_ms_L4_, _ms_R4_,
-_______,_______,_______,    _______,_______,_______
+_______,TO(1),    _______,TO(1),
+_______,_______,_______,    _______,_______,_______,
+_num_L1_, _num_R1_,
+_num_L2_, _num_R2_,
+_num_L3_, _num_R3_,
+_num_L4_, _num_R4_
 ),
 
 [3] = LAYOUT_wrapper(
+_______,TO(1),    _______,TO(1),
+_______,_______,_______,    _______,_______,_______,
 _func_L1_, _func_R1_,
 _func_L2_, _func_R2_,
 _func_L3_, KC_F1,KC_F2,KC_F3,KC_RCTL,TO(4),
-_func_L4_, _func_R4_,
-_______,_______,_______,    _______,_______,_______
+_func_L4_, _func_R4_
 ),
 
 [4] = LAYOUT(
+_______,TO(1),    _______,TO(1),
+_______,_______,_______,    _______,_______,_______,
 TO(0),  KC_NO,  KC_NO,  KC_NO,  RGB_TOG,  RGB_TOG, KC_NO,  KC_NO,  KC_NO,  KC_NO,
 RGB_HUI,RGB_SAI,RGB_SPI,RGB_VAI,RGB_MOD,  RGB_MOD, RGB_VAI,RGB_SPI,RGB_SAI,RGB_HUI,
 RGB_HUD,RGB_SAD,RGB_SPD,RGB_VAD,RGB_RMOD, RGB_RMOD,RGB_VAD,RGB_SPD,RGB_SAD,RGB_HUD,
-                KC_NO,  KC_NO,  KC_NO,    KC_NO,   KC_NO,  KC_NO,
-_______,_______,_______,    _______,_______,_______
+                KC_NO,  KC_NO,  KC_NO,    KC_NO,   KC_NO,  KC_NO
 ),
 
 [5] = LAYOUT(
+_______,TO(1),    _______,TO(1),
+_______,_______,_______,    _______,_______,_______,
 _______,_______,_______,_______,_______, KC_BTN1,KC_BTN2,_______,_______,_______,
 _______,_______,_______,_______,_______, KC_BTN1,KC_BTN2,_______,_______,_______,
 SPD_LO, SPD_MID,SPD_HI, _______,_______, KC_BTN1,KC_BTN2,SPD_LO, SPD_MID,SPD_HI,
-                _______,_______,_______,    _______,_______,_______,
-_______,_______,_______,    _______,_______,_______
+                _______,_______,_______,    _______,_______,_______
+),
+[6] = LAYOUT(
+TO(0),TO(1),    TO(0),TO(1),
+_______,_______,_______,    _______,_______,_______,
+_______,_______,_______,_______,_______, KC_BTN1,KC_BTN2,_______,_______,_______,
+_______,_______,_______,_______,_______, KC_BTN1,KC_BTN2,_______,_______,_______,
+SPD_LO, SPD_MID,SPD_HI, _______,_______, KC_BTN1,KC_BTN2,SPD_LO, SPD_MID,SPD_HI,
+                _______,_______,_______,    _______,_______,_______
 ),
 
 };
@@ -110,7 +125,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 //
 const rgblight_segment_t PROGMEM my_capslock_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     {3,  1, HSV_WHITE},
-    {15, 1, HSV_WHITE}
+    {24, 1, HSV_WHITE}
 //    {0, 3,   0,  0,200}
 );
 // my_layer1_layer
@@ -119,7 +134,7 @@ const rgblight_segment_t PROGMEM my_capslock_layer[] = RGBLIGHT_LAYER_SEGMENTS(
 //
 const rgblight_segment_t PROGMEM my_layer1_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     {3,  1, HSV_BLUE},
-    {15, 1, HSV_BLUE}
+    {24, 1, HSV_BLUE}
 //    {0, 3, 150,255,200}
 );
 // my_layer2_layer
@@ -128,7 +143,7 @@ const rgblight_segment_t PROGMEM my_layer1_layer[] = RGBLIGHT_LAYER_SEGMENTS(
 //
 const rgblight_segment_t PROGMEM my_layer2_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     {3,  1, HSV_MAGENTA},
-    {15, 1, HSV_MAGENTA}
+    {24, 1, HSV_MAGENTA}
 //    {0, 3, 245,255,160}
 );
 // my_layer3_layer
@@ -137,20 +152,20 @@ const rgblight_segment_t PROGMEM my_layer2_layer[] = RGBLIGHT_LAYER_SEGMENTS(
 //
 const rgblight_segment_t PROGMEM my_layer3_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     {3,  1, HSV_YELLOW},
-    {15, 1, HSV_YELLOW}
+    {24, 1, HSV_YELLOW}
 //    {0, 3,  43,255,200}
 );
 // my_layer4_layer
 //
 const rgblight_segment_t PROGMEM my_layer4_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     {3,  1, HSV_PINK},
-    {15, 1, HSV_PINK}
+    {24, 1, HSV_PINK}
 );
 // my_layer5_layer
 //
 const rgblight_segment_t PROGMEM my_layer5_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     {3,  1, HSV_RED},
-    {15, 1, HSV_RED}
+    {24, 1, HSV_RED}
 );
 
 
