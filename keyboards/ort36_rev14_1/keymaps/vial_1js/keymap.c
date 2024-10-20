@@ -24,7 +24,7 @@ _qwert_L1_, _qwert_R1_,
 _qwert_L2_, _qwert_R2_,
 _qwert_L3_, _qwert_R3_,
 _qwert_L4_, _qwert_R4_,
-KC_MS_WH_DOWN,KC_MS_BTN3,KC_MS_WH_UP,
+KC_MS_WH_UP  ,KC_MS_BTN3,KC_MS_WH_DOWN,
 KC_MS_WH_DOWN,KC_MS_BTN3,KC_MS_WH_UP
 ),
 
@@ -61,9 +61,9 @@ _______,_______,_______,    _______,_______,_______
 ),
 
 [5] = LAYOUT(
+_______,SPD_LO, SPD_MID,SPD_HI, _______, KC_BTN1,KC_BTN2,_______,_______,_______,
 _______,_______,_______,_______,_______, KC_BTN1,KC_BTN2,_______,_______,_______,
-_______,_______,_______,_______,_______, KC_BTN1,KC_BTN2,_______,_______,_______,
-SPD_LO, SPD_MID,SPD_HI, _______,_______, KC_BTN1,KC_BTN2,SPD_LO, SPD_MID,SPD_HI,
+_______,_______,_______,KC_BTN1,KC_BTN2, KC_BTN1,KC_BTN2,_______,_______,_______,
                 _______,_______,_______,    _______,_______,_______,
 _______,_______,_______,    _______,_______,_______
 ),

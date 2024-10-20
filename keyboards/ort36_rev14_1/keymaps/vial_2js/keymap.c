@@ -9,13 +9,13 @@ void pointing_device_init_user(void) {
     set_auto_mouse_layer(5);
     set_auto_mouse_enable(true);
 }
-#endif
 
 enum custom_keycodes {
     SPD_LO = SAFE_RANGE,
     SPD_MID,
     SPD_HI
 };
+#endif
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -177,15 +177,18 @@ bool led_update_user(led_t led_state) {
 #ifdef POINTING_DEVICE_ENABLE
 
 // Modify these values to adjust the scrolling speed
-#define CURSOR_DIV    1
+#define CURSOR_AMP_R    0.8
+#define CURSOR_AMP_L    1.2
 
 // Variables to store accumulated values
-float cursor_accumulated_x = 0;
-float cursor_accumulated_y = 0;
+float cursor_accumulated_left_x = 0;
+float cursor_accumulated_left_y = 0;
+float cursor_accumulated_right_x = 0;
+float cursor_accumulated_right_y = 0;
 float spd_multi = 1;
 
 // Function to handle mouse reports and perform drag scrolling
-report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
+report_mouse_t pointing_device_task_combined_user(report_mouse_t left_report, report_mouse_t right_report) {
   // Check if drag scrolling is active
   if (set_spd_lo) {
     spd_multi = 0.3;
@@ -197,18 +200,24 @@ report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
     spd_multi = 1;
   }
   // Calculate and accumulate cursor values based on mouse movement and divisors
-  cursor_accumulated_x += (float)mouse_report.x * spd_multi * (-1) / CURSOR_DIV;
-  cursor_accumulated_y += (float)mouse_report.y * spd_multi * (-1) / CURSOR_DIV;
+  cursor_accumulated_left_x  += (float)left_report.x * spd_multi * (-1) / CURSOR_AMP_L;
+  cursor_accumulated_left_y  += (float)left_report.y * spd_multi * (-1) / CURSOR_AMP_L;
+  cursor_accumulated_right_x += (float)right_report.x * spd_multi * (-1) / CURSOR_AMP_R;
+  cursor_accumulated_right_y += (float)right_report.y * spd_multi * (-1) / CURSOR_AMP_R;
 
   // Assign integer parts of accumulated cursor values to the mouse report
-    mouse_report.x = (int8_t)cursor_accumulated_x;
-    mouse_report.y = (int8_t)cursor_accumulated_y;
+    left_report.x  = (int8_t)cursor_accumulated_left_x;
+    left_report.y  = (int8_t)cursor_accumulated_left_y;
+    right_report.x = (int8_t)cursor_accumulated_right_x;
+    right_report.y = (int8_t)cursor_accumulated_right_y;
 
   // Update accumulated cursor values by subtracting the integer parts
-    cursor_accumulated_x -= (int8_t)cursor_accumulated_x;
-    cursor_accumulated_y -= (int8_t)cursor_accumulated_y;
+    cursor_accumulated_left_x  -= (int8_t)cursor_accumulated_left_x;
+    cursor_accumulated_left_y  -= (int8_t)cursor_accumulated_left_y;
+    cursor_accumulated_right_x -= (int8_t)cursor_accumulated_right_x;
+    cursor_accumulated_right_y -= (int8_t)cursor_accumulated_right_y;
 
-    return mouse_report;
+    return pointing_device_combine_reports(left_report, right_report);
 }
 
 // Function to handle key events and enable/disable drag scrolling
@@ -228,4 +237,5 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     return true;
 }
+
 #endif
